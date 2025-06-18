@@ -57,3 +57,47 @@ MYSQL_PASSWORD=azuracast_dbpass
 AZURACAST_ADMIN_EMAIL=admin@example.com
 AZURACAST_SETUP_COMPLETE=false
 ```
+🔐 Hinweis: Ersetze alle Zugangsdaten vor dem produktiven Einsatz.
+
+Starte den Container:
+```
+docker compose up -d
+```
+
+Rufe die Weboberfläche auf:
+```
+http://localhost
+
+oder: http://[Deine-Server-IP]
+```
+
+⚙️ Verwaltung
+AzuraCast CLI öffnen:
+```
+docker compose exec web azuracast
+```
+
+Logs anzeigen:
+```
+docker compose logs -f
+```
+
+Dienste neu starten:
+```
+docker compose restart
+```
+
+🔒 Domain & SSL
+
+Wenn du AzuraCast öffentlich betreiben willst:
+
+Verwende einen Reverse Proxy (z. B. NGINX, Traefik, Caddy)
+
+Oder aktiviere Let's Encrypt in der Setup-Oberfläche
+
+🗂️ Datenverzeichnisse
+azuracast_station_data: Musiktitel, Medien, Stationseinstellungen
+
+azuracast_data: Systemdateien, Konfiguration, Logs
+
+AzuraCast ist unter der Apache 2.0 Lizenz verfügbar.
